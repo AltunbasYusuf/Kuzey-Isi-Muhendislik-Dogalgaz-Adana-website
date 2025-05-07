@@ -34,21 +34,31 @@
     }
 
     nav {
-      background-color: #145374;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 10px;
-      flex-wrap: wrap;
-    }
+  background-color: #145374;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  flex-wrap: wrap;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-    }
+nav a {
+  background-color: #0a2f4f;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a:hover {
+  background-color: #1e5a8c;
+  transform: translateY(-2px);
+}
+
 .slider-container {
   position: relative;
   width: 100%;
@@ -106,12 +116,61 @@
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-    .floating-wp {
-  animation: pulse 2s infinite;
+.floating-wp-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
 }
+
+.wp-box {
+  display: flex;
+  align-items: center;
+  background: #25D366;
+  padding: 10px 14px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+  gap: 12px;
+}
+
+.wp-text {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 13.5px;
+  line-height: 1.2;
+}
+
+.wp-label {
+  font-weight: bold;
+}
+
+.wp-number {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.wp-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+.wp-icon img {
+  width: 22px;
+  height: 22px;
+}
+
 @keyframes pulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
 
@@ -216,39 +275,39 @@
       width: 30px;
       height: 30px;
     }
-
-    /* 🌙 DARK MODE */
-    body.dark {
-      background-color: #121212;
-      color: #f0f0f0;
-    }
-
-    body.dark header,
-    body.dark footer,
-    body.dark nav {
-      background-color: #1e1e1e;
-    }
-
-    body.dark nav a {
-      color: #ffffff;
-    }
-
-    body.dark .contact {
-      background-color: #1f1f1f;
-    }
-
-    body.dark .contact a {
-      color: #f0f0f0;
-    }
-
+    .brand-logos-mobile {
+  display: none;
+}
     /* Responsive düzenlemeler */
     @media (max-width: 768px) {
+      .brand-logos-mobile {
+    display: flex;
+    flex-wrap: nowrap;         /* Tek satır */
+    overflow-x: auto;          /* Taşarsa scroll */
+    justify-content: flex-start;
+    gap: 3px;
+    padding: 10px 12px;
+    background-color: #e8f6ff;
+    scroll-snap-type: x mandatory;
+  }
+
+  .brand-logos-mobile img {
+    height: 16px;              /* Küçültüldü */
+    max-width: 88px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    background: white;
+    padding: 4px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  }
+
   header {
     background-image: url('Mob.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 160px;
+    height: 150px;
     position: relative;
   }
 
@@ -291,17 +350,27 @@
   }
 
   nav {
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
+    position: absolute;         
+    top: 190px;                
+    left: 0;
+    right: 0;
     background-color: #145374;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1001;             
   }
 
   nav.active {
-    max-height: 400px;
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
   }
 
   nav a {
@@ -321,7 +390,6 @@
   nav.active a:nth-child(3) { transition-delay: 0.15s; }
   nav.active a:nth-child(4) { transition-delay: 0.2s; }
   nav.active a:nth-child(5) { transition-delay: 0.25s; }
-
   .product {
     width: 90%;
   }
@@ -349,10 +417,32 @@
 .brand-logos img:hover {
   transform: scale(1.1); /* Hover efekti */
 }
+.floating-wp-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  padding: 8px 14px;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
 
+.floating-wp-wrapper img {
+  width: 26px;
+  height: 26px;
+}
 
-
-
+.floating-wp-wrapper:hover {
+  background-color: #1ebe5d;
+}
   </style>
 </head>
 <body>
@@ -375,9 +465,6 @@
         <img src="buderus.png" alt="Buderus">
         <img src="vailant.jpg" alt="Vaillant">
       </div>      
-      <button onclick="toggleDarkMode()" id="themeToggle" style="margin-left: auto; background: none; border: none; font-size: 24px; cursor: pointer;">
-        🌙
-      </button>
       <div class="hamburger" onclick="toggleMenu()">
         <span></span>
         <span></span>
@@ -385,6 +472,13 @@
       </div>
     </div>
   </header>
+  <div class="brand-logos-mobile">
+    <img src="demirdöküm.png" alt="Demirdöküm">
+    <img src="DAIKIN_logo.svg.png" alt="Daikin">
+    <img src="bosch.png" alt="Bosch">
+    <img src="buderus.png" alt="Buderus">
+    <img src="vailant.jpg" alt="Vaillant">
+  </div>
   <nav id="mainNav">
     <a href="index.html">Anasayfa</a>
     <a href="urunler.html">Ürünlerimiz</a>
@@ -419,22 +513,32 @@
         <p>Enerji tasarruflu, yüksek performanslı kombi çözümü.</p>
       </div>
       <div class="product">
-        <img src="kombi.jpg" alt="Demirdöküm Kombi Model X">
+        <img src="kombi.jpg" alt="Demirdöküm Kombi Model Y">
         <h3>Kombi Model X</h3>
         <p>Enerji tasarruflu, yüksek performanslı kombi çözümü.</p>
       </div>
       <div class="product">
-        <img src="kombi.jpg" alt="Demirdöküm Kombi Model X">
+        <img src="kombi.jpg" alt="Demirdöküm Kombi Model Z">
         <h3>Kombi Model X</h3>
         <p>Enerji tasarruflu, yüksek performanslı kombi çözümü.</p>
       </div>  
+    </div>
+  </div>
+    <div class="section" id="products">
+    <h2>Daikin</h2>
+    <div class="products">
       <div class="product">
-        <img src="kombi.jpg" alt="Demirdöküm Kombi Model X">
+        <img src="kombi.jpg" alt="Daikin Klima Model X">
         <h3>Kombi Model X</h3>
         <p>Enerji tasarruflu, yüksek performanslı kombi çözümü.</p>
-      </div>  
+      </div>
       <div class="product">
-        <img src="kombi.jpg" alt="Demirdöküm Kombi Model X">
+        <img src="kombi.jpg" alt="Daikin Klima Model Y">
+        <h3>Kombi Model X</h3>
+        <p>Enerji tasarruflu, yüksek performanslı kombi çözümü.</p>
+      </div>
+      <div class="product">
+        <img src="kombi.jpg" alt="Daikin Klima Model Z">
         <h3>Kombi Model X</h3>
         <p>Enerji tasarruflu, yüksek performanslı kombi çözümü.</p>
       </div>  
@@ -535,13 +639,26 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach(section => {
   observer.observe(section);
 });
+function toggleMenu() {
+  const nav = document.getElementById("mainNav");
+  const burger = document.querySelector(".hamburger");
+  nav.classList.toggle("active");
+  burger.classList.toggle("open");
+}
   </script>
   
   
 <!-- Kayan WhatsApp butonu -->
-<a href="https://wa.me/905514424188" target="_blank" class="floating-wp">
-  <img src="WhatsApp.svg.webp" alt="WhatsApp" />
-</a>
-
+<div class="floating-wp-wrapper">
+  <div class="wp-box">
+    <div class="wp-text">
+      <div class="wp-label">Ücretsiz keşif ve bilgi</div>
+      <div class="wp-number">0 (551) 442 41 88</div>
+    </div>
+    <a href="https://wa.me/905514424188" target="_blank" class="wp-icon">
+      <img src="WhatsApp.svg.webp" alt="WhatsApp" />
+    </a>
+  </div>
+</div>
 </body>
 </html>
