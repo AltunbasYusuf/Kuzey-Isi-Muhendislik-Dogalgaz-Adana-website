@@ -4,13 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kuzey Isı Mühendislik Doğalgaz | Adana Kombi ve Tesisat</title>
-
   <meta name="description" content="Kuzey Isı Mühendislik Doğalgaz, Adana'da doğalgaz tesisatı, kombi montajı ve mühendislik çözümleri sunar.">
   <meta name="keywords" content="doğalgaz, kombi, tesisat, kuzey doğalgaz, mühendislik, Adana doğalgaz firması, ısı sistemleri, kombi montaj">
   <meta name="author" content="Kuzey Isı Mühendislik Doğalgaz">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="favicon.jpg">
-
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -18,21 +16,17 @@
       padding: 0;
       transition: background 0.3s, color 0.3s;
     }
-
     header {
       background-color: #0a2f4f;
       color: white;
       padding: 20px;
       text-align: center;
     }
-    
-
     .logo {
       width: 80px;
       height: auto;
       object-fit: contain;
     }
-
     nav {
   background-color: #145374;
   display: flex;
@@ -41,7 +35,6 @@
   padding: 12px;
   flex-wrap: wrap;
 }
-
 nav a {
   background-color: #0a2f4f;
   color: white;
@@ -53,12 +46,10 @@ nav a {
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
 nav a:hover {
   background-color: #1e5a8c;
   transform: translateY(-2px);
 }
-
 .slider-container {
   position: relative;
   width: 100%;
@@ -77,13 +68,19 @@ nav a:hover {
 
 .slide {
   min-width: 100%;
-  height: auto;
+  height: 600px; /* Slider yüksekliği */
+  background-size: 100% 100%; /* Tam oturması için */
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .slide img {
-  width: 100%;
-  height: auto;
+  height: 100%;
+  width: auto;
 }
+
+
+
 
 /* Navigation buttons */
 .prev, .next {
@@ -98,19 +95,15 @@ nav a:hover {
   cursor: pointer;
   z-index: 10;
 }
-
 .prev {
   left: 10px;
 }
-
 .next {
   right: 10px;
 }
-
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
-
 .section {
   opacity: 0;
   transform: translateY(30px);
@@ -121,6 +114,10 @@ nav a:hover {
   bottom: 20px;
   right: 20px;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px; /* Kutular arası boşluk */
 }
 
 .wp-box {
@@ -129,9 +126,10 @@ nav a:hover {
   background: #25D366;
   padding: 10px 14px;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  animation: pulse 2s infinite;
   gap: 12px;
+  animation: pulse 2s infinite;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  min-width: 220px;
 }
 
 .wp-text {
@@ -140,6 +138,7 @@ nav a:hover {
   color: white;
   font-size: 13.5px;
   line-height: 1.2;
+  flex: 1;
 }
 
 .wp-label {
@@ -173,51 +172,42 @@ nav a:hover {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
-
     .section h2 {
       text-align: left;
     }
-
     .products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .product {
-      width: 200px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 10px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
- 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1200px; /* veya %100 */
+  margin: auto;
+}
+.product {
+  width: 300px;
+  flex-shrink: 0;
+}
 .product:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
     .product img {
       width: 100%;
       height: 150px;
       object-fit: cover;
     }
-
     .contact {
       text-align: center;
       padding: 20px 10px;
       background-color: #e0f2ff;
     }
-
     footer {
       background-color: #0a2f4f;
       color: white;
       text-align: center;
       padding: 15px;
     }
-
     iframe {
       width: 100%;
       height: 200px;
@@ -225,7 +215,6 @@ nav a:hover {
       margin-top: 10px;
       margin-bottom: 10px;
     }
-
     #aboutModal {
       display: none;
       position: fixed;
@@ -238,7 +227,6 @@ nav a:hover {
       justify-content: center;
       align-items: center;
     }
-
     #aboutModal .modal-content {
       background-color: white;
       padding: 30px;
@@ -246,7 +234,6 @@ nav a:hover {
       border-radius: 10px;
       position: relative;
     }
-
     .close {
       position: absolute;
       top: 10px;
@@ -255,11 +242,9 @@ nav a:hover {
       cursor: pointer;
       color: #555;
     }
-
     .close:hover {
       color: black;
     }
-
     .floating-wp {
       position: fixed;
       bottom: 20px;
@@ -270,7 +255,6 @@ nav a:hover {
       border-radius: 50%;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
-
     .floating-wp img {
       width: 30px;
       height: 30px;
@@ -278,25 +262,28 @@ nav a:hover {
     .brand-logos-mobile {
   display: none;
 }
-    /* Responsive düzenlemeler */
-    @media (max-width: 768px) {
+    @media (max-width: 768px) {  /*Mobil versiyon ayarları*/
       .desktop-logo {
     display: none !important;
+  }
+  .slide {
+    height: 250px;
+    background-size: cover;
   }
       .brand-logos-mobile {
     display: flex;
     flex-wrap: nowrap;         /* Tek satır */
     overflow-x: auto;          /* Taşarsa scroll */
     justify-content: flex-start;
-    gap: 3px;
+    gap:13px;
     padding: 10px 12px;
     background-color: #e8f6ff;
     scroll-snap-type: x mandatory;
   }
-
   .brand-logos-mobile img {
-    height: 16px;              /* Küçültüldü */
-    max-width: 88px;
+    height: 30px;              /* Küçültüldü */
+    max-width: 80px;
+    min-width: 60px;
     flex-shrink: 0;
     scroll-snap-align: start;
     background: white;
@@ -304,7 +291,6 @@ nav a:hover {
     border-radius: 5px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.08);
   }
-
   header {
     background-image: url('Mob.png');
     background-size: cover;
@@ -313,12 +299,10 @@ nav a:hover {
     height: 150px;
     position: relative;
   }
-
   header > div a[href="index.html"],
   header > div div {
     display: none !important;
   }
-
   #themeToggle {
     display: block !important;
     position: absolute;
@@ -331,7 +315,6 @@ nav a:hover {
     color: white;
     cursor: pointer;
   }
-
   .hamburger {
     display: flex !important;
     position: absolute;
@@ -343,7 +326,6 @@ nav a:hover {
     align-items: center;
     cursor: pointer;
   }
-
   .hamburger span {
     height: 3px;
     width: 25px;
@@ -351,7 +333,6 @@ nav a:hover {
     margin: 4px 0;
     transition: 0.4s;
   }
-
   nav {
     display: flex;
     flex-direction: column;
@@ -369,25 +350,21 @@ nav a:hover {
     pointer-events: none;
     z-index: 1001;             
   }
-
   nav.active {
     transform: scaleY(1);
     opacity: 1;
     pointer-events: auto;
   }
-
   nav a {
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.4s ease, transform 0.4s ease;
     color: white;
   }
-
   nav.active a {
     opacity: 1;
     transform: translateY(0);
   }
-
   nav.active a:nth-child(1) { transition-delay: 0.05s; }
   nav.active a:nth-child(2) { transition-delay: 0.1s; }
   nav.active a:nth-child(3) { transition-delay: 0.15s; }
@@ -396,7 +373,6 @@ nav a:hover {
   .product {
     width: 90%;
   }
-
   .section h2 {
     text-align: center;
   }
@@ -409,50 +385,73 @@ nav a:hover {
   gap: 40px; /* Logolar arası boşluk */
   padding: 20px 0;
 }
-
 .brand-logos img {
   height: 50px; /* Logoların yüksekliği */
   width: 150px; /* Genişlik otomatik ayarlanır */
   object-fit: contain;
   transition: transform 0.3s ease;
 }
-
 .brand-logos img:hover {
   transform: scale(1.1); /* Hover efekti */
 }
-.floating-wp-wrapper {
+.floating-icons {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 999;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.icon-button {
+  width: 52px;
+  height: 52px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: #25D366;
-  padding: 8px 14px;
-  border-radius: 30px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
+  justify-content: center;
+  transition: all 0.3s ease;
+  animation: pulse 2.5s infinite;
 }
 
-.floating-wp-wrapper img {
-  width: 26px;
-  height: 26px;
+.icon-button img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
 }
 
-.floating-wp-wrapper:hover {
-  background-color: #1ebe5d;
+/* Hover efekti */
+.icon-button:hover {
+  transform: scale(1.2);
+  background-color: #f0f8ff;
+  box-shadow: 0 0 12px rgba(0, 153, 255, 0.6);
 }
+
+/* Canlılık için pulse animasyonu */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 153, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(0, 153, 255, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 153, 255, 0.4);
+  }
+}
+
 .desktop-logo {
   display: block;
 }
   </style>
 </head>
 <body>
-
   <header>
     <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; position: relative;">
       <a href="index.html" class="desktop-logo">
@@ -468,7 +467,6 @@ nav a:hover {
         <img src="demirdöküm.png" alt="Demirdöküm">
         <img src="DAIKIN_logo.svg.png" alt="Daikin">
         <img src="bosch.png" alt="Bosch">
-        <img src="buderus.png" alt="Buderus">
         <img src="vailant.jpg" alt="Vaillant">
       </div>      
       <div class="hamburger" onclick="toggleMenu()">
@@ -482,7 +480,6 @@ nav a:hover {
     <img src="demirdöküm.png" alt="Demirdöküm">
     <img src="DAIKIN_logo.svg.png" alt="Daikin">
     <img src="bosch.png" alt="Bosch">
-    <img src="buderus.png" alt="Buderus">
     <img src="vailant.jpg" alt="Vaillant">
   </div>
   <nav id="mainNav">
@@ -495,62 +492,66 @@ nav a:hover {
   <div class="slider-container">
     <div class="slider">
       <div class="slides">
-        <div class="slide">
-          <img src="vrv-teknolojisi-ile-her-mekana-uygun-cozum.webp" alt="Kuzey Isı mağaza fotoğrafı 1">
-        </div>
-        <div class="slide">
-          <img src="dinaxor-klimalar-ile-dort-mevsim-konfor.webp" alt="Kuzey Isı mağaza fotoğrafı 2">
-        </div>
-        <!-- Diğer slaytları buraya ekleyebilirsiniz -->
+        <div class="slide" style="background-image: url('vrv-teknolojisi-ile-her-mekana-uygun-cozum.webp');"></div>
+        <div class="slide" style="background-image: url('dinaxor-klimalar-ile-dort-mevsim-konfor.webp');"></div>
+        <!-- Diğer slaytları aynı şekilde ekle -->
       </div>
       <button class="prev" onclick="prevSlide()">❮</button>
       <button class="next" onclick="nextSlide()">❯</button>    
     </div>
-  </div>
-  
-  
-
+  </div>  
   <div class="section" id="products">
     <h2>Demirdöküm</h2>
     <div class="products">
       <div class="product">
-        <img src="kombi.jpg" alt="Demirdöküm Kombi Model X">
-        <h3>Kombi Model X</h3>
-        <p>Enerji tasarruflu, yüksek performanslı kombi çözümü.</p>
+        <img src="Ademix.png" alt="Demirdöküm Kombi Model Ademix">
+        <h3>DemirDöküm Ademix Yoğuşmalı Kombi</h3>
+        <ul>
+          <li>A Sınıfı Yüksek Isıtma Verimi</li>
+          <li>Akıllı Isıtma Sistemi</li>
+          <li>Dünyadan Ödüllü Şık Tasarım</li>
+        </ul>
       </div>
       <div class="product">
-        <img src="kombi.jpg" alt="Demirdöküm Kombi Model Y">
-        <h3>Kombi Model X</h3>
-        <p>Enerji tasarruflu, yüksek performanslı kombi çözümü.</p>
-      </div>
-      <div class="product">
-        <img src="kombi.jpg" alt="Demirdöküm Kombi Model Z">
-        <h3>Kombi Model X</h3>
-        <p>Enerji tasarruflu, yüksek performanslı kombi çözümü.</p>
-      </div>  
+        <img src="Nitromix.png" alt="Demirdöküm Kombi Model Nitromix">
+        <h3>Nitromix Duvar Tipi Hermetik Yoğuşmalı Kombi</h3>
+        <ul>
+          <li>ERP Yönetmeliğine Uygun A Sınıfı Isıtma ve Sıcak Su Verimliliği</li>
+            <li>Maksimum Isı ve Sıcak Su Konforu</li>
+              <li>Düşük Doğalgaz Tüketimi</li>
+        </ul>
+      </div>   
+        <div class="product">
+          <img src="Vintomix.png" alt="Demirdöküm Kombi Model Vintomix">
+          <h3>DemirDöküm Vintomix Yoğuşmalı Kombi</h3>
+          <ul>
+            <li>A Sınıfı Yüksek Isıtma Verimi</li>
+            <li>Yüksek Verimli Pompa ile Elektrik Tasarrufu</li>
+            <li>Yüksek Sıcak Su Konforu</li>
+          </ul>
+        </div>         
     </div>
   </div>
     <div class="section" id="products">
     <h2>Daikin</h2>
     <div class="products">
       <div class="product">
-        <img src="kombi.jpg" alt="Daikin Klima Model X">
-        <h3>Kombi Model X</h3>
-        <p>Enerji tasarruflu, yüksek performanslı kombi çözümü.</p>
+        <img src="icon.webp" alt="Daikin Klima Model X">
+        <h3>Icon Premix (D2CBP020)</h3>
+        <p>Tam Yoğuşmalı Kombi</p>
       </div>
       <div class="product">
-        <img src="kombi.jpg" alt="Daikin Klima Model Y">
-        <h3>Kombi Model X</h3>
-        <p>Enerji tasarruflu, yüksek performanslı kombi çözümü.</p>
+        <img src="ndj.webp" alt="Daikin Klima Model Y">
+        <h3>NDJ Premix 35 KW (D2CND035)</h3>
+        <p>Tam Yoğuşmalı Kombi</p>
       </div>
       <div class="product">
-        <img src="kombi.jpg" alt="Daikin Klima Model Z">
-        <h3>Kombi Model X</h3>
-        <p>Enerji tasarruflu, yüksek performanslı kombi çözümü.</p>
+        <img src="ndj2.webp" alt="Daikin Klima Model Z">
+        <h3>NDJ Premix 24 KW (D2CND024)</h3>
+        <p>Tam Yoğuşmalı Kombi</p>
       </div>  
     </div>
   </div>
-
   <div class="section contact" id="contact">
     <h2 style="margin-left: 15px;">İletişim</h2>
     <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 15px;">
@@ -558,7 +559,6 @@ nav a:hover {
         <img src="WhatsApp.svg.webp" alt="WhatsApp" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;">
         0 (551) 442 41 88
       </p>
-
       <a href="https://wa.me/905514424188" target="_blank"
          style="display: inline-block; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">
          WhatsApp ile İletişime Geç</a>
@@ -569,27 +569,21 @@ nav a:hover {
          Instagram
       </a>
     </div>
-
     <p>
       📍 <strong>Adres:</strong>
       <a href="https://maps.app.goo.gl/fFCMVRGMjXDCPKcq5" target="_blank" style="text-decoration: underline; color: inherit;">
         Güney Gelişim Sitesi, Mahfesığmaz, 79155. Sk. no:3/B C blok, 01170 Çukurova/Adana
       </a>      
     </p>
-
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3069.199061078085!2d35.299781276991336!3d37.04410997222144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1528896a3a96daaf%3A0xad924af607957089!2sKUZEY%20ISI%20M%C3%9CHEND%C4%B0SL%C4%B0K%20DO%C4%9EALGAZ!5e0!3m2!1str!2str!4v1714672400000!5m2!1str!2str"
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
-
     <p>🕒 Çalışma Saatleri: 08:00 - 18:00</p>
   </div>
-
   <footer>
     <p>&copy; 2025 Kuzey Isı Mühendislik Doğalgaz. Tüm hakları saklıdır.</p>
   </footer>
-
-  <!-- Hakkımızda Modal -->
   <div id="aboutModal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -601,28 +595,23 @@ nav a:hover {
       </p>
     </div>
   </div>
-
   <script>
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 const slidesContainer = document.querySelector('.slides');
-
 function showSlide(index) {
   // Slider'ı kaydır
   slidesContainer.style.transform = `translateX(-${index * 100}%)`;
 }
-
 function nextSlide() {
   currentSlide = (currentSlide + 1) % totalSlides;
   showSlide(currentSlide);
 }
-
 function prevSlide() {
   currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
   showSlide(currentSlide);
 }
-
 // Başlangıçta ilk slaytı göster
 window.onload = function () {
   showSlide(currentSlide);
@@ -654,17 +643,18 @@ function toggleMenu() {
   </script>
   
   
-<!-- Kayan WhatsApp butonu -->
-<div class="floating-wp-wrapper">
-  <div class="wp-box">
-    <div class="wp-text">
-      <div class="wp-label">Ücretsiz keşif ve bilgi</div>
-      <div class="wp-number">0 (551) 442 41 88</div>
-    </div>
-    <a href="https://wa.me/905514424188" target="_blank" class="wp-icon">
-      <img src="WhatsApp.svg.webp" alt="WhatsApp" />
+  <div class="floating-icons">
+    <a href="tel:905514424188" class="icon-button phone" title="Ara">
+      <img src="telefon.png" alt="Telefon">
+    </a>
+    <a href="https://wa.me/905514424188" target="_blank" class="icon-button whatsapp" title="WhatsApp">
+      <img src="WhatsApp.svg.webp" alt="WhatsApp">
+    </a>
+    <a href="https://maps.app.goo.gl/fFCMVRGMjXDCPKcq5" target="_blank" class="icon-button location" title="Konum">
+      <img src="konum.png" alt="Konum">
     </a>
   </div>
-</div>
+  
+
 </body>
 </html>
