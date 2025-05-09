@@ -99,75 +99,289 @@
       border: 4px solid white;
       border-radius: 10px;
     }
+    nav {
+  background-color: #145374;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  flex-wrap: wrap;
+}
+nav a {
+  background-color: #0a2f4f;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+nav a:hover {
+  background-color: #1e5a8c;
+  transform: translateY(-2px);
+}
+ .brand-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 20px 0;
+}
+.brand-logos img {
+  height: 50px;
+  width: 150px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.brand-logos img:hover {
+  transform: scale(1.1);
+}
+.floating-icons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
-    /* Dark Mode */
-    body.dark {
-      background-color: #121212;
-      color: #f0f0f0;
-    }
+.icon-button {
+  width: 52px;
+  height: 52px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  animation: pulse 2.5s infinite;
+}
 
-    body.dark header,
-    body.dark nav,
-    body.dark footer {
-      background-color: #1e1e1e;
-    }
+.icon-button img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
 
-    body.dark nav a {
-      color: #ffffff;
-    }
+/* Hover efekti */
+.icon-button:hover {
+  transform: scale(1.2);
+  background-color: #f0f8ff;
+  box-shadow: 0 0 12px rgba(0, 153, 255, 0.6);
+}
 
-    body.dark .gallery img {
-      box-shadow: 0 2px 6px rgba(255,255,255,0.2);
-    }
+/* Canlılık için pulse animasyonu */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 153, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(0, 153, 255, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 153, 255, 0.4);
+  }
+}
+    @media (max-width: 768px) {  /*Mobil versiyon ayarları*/
+      .desktop-logo {
+    display: none !important;
+  }
+  .slide {
+    height: 250px;
+    background-size: cover;
+  }
+      .brand-logos-mobile {
+    display: flex;
+    flex-wrap: nowrap;         /* Tek satır */
+    overflow-x: auto;          /* Taşarsa scroll */
+    justify-content: flex-start;
+    gap:13px;
+    padding: 10px 12px;
+    background-color: #e8f6ff;
+    scroll-snap-type: x mandatory;
+  }
+  .brand-logos-mobile img {
+    height: 30px;              /* Küçültüldü */
+    max-width: 80px;
+    min-width: 60px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    background: white;
+    padding: 4px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  }
+  header {
+    background-image: url('Mob.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 150px;
+    position: relative;
+  }
+  header > div a[href="index.html"],
+  header > div div {
+    display: none !important;
+  }
+  #themeToggle {
+    display: block !important;
+    position: absolute;
+    top: 10px;
+    right: 40px; /* en sağda */
+    z-index: 1002;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+  }
+  .hamburger {
+    display: flex !important;
+    position: absolute;
+    top: 10px;
+    right: 10px; /* hemen solunda */
+    z-index: 1002;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .hamburger span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: absolute;         
+    top: 190px;                
+    left: 0;
+    right: 0;
+    background-color: #145374;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1001;             
+  }
+  nav.active {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  nav a {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    color: white;
+  }
+  nav.active a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  nav.active a:nth-child(1) { transition-delay: 0.05s; }
+  nav.active a:nth-child(2) { transition-delay: 0.1s; }
+  nav.active a:nth-child(3) { transition-delay: 0.15s; }
+  nav.active a:nth-child(4) { transition-delay: 0.2s; }
+  nav.active a:nth-child(5) { transition-delay: 0.25s; }
+  .product {
+    width: 90%;
+  }
 
-    body.dark h2 {
-      color: #ffffff;
-    }
+}
+#aboutModal {
+  display: none;
+  position: fixed;
+  z-index: 3000; /* hamburger'den yüksek */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.75);
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
 
-    @media (max-width: 768px) {
-      .gallery img {
-        width: 100%;
-        height: auto;
-      }
-    }
+#aboutModal .modal-content {
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 12px;
+  max-width: 95%;
+  max-height: 90%;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#aboutModal .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 34px;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  z-index: 3100;
+}
+
+#aboutModal .close:hover {
+  color: #d10000;
+}
   </style>
 </head>
 <body>
-  <header>
-    <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #0a2f4f;">
-      
-      <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 0 auto;">
-        <a href="index.html">
-          <img src="Logo.jpg" alt="Kuzey Doğalgaz Logo" style="width: 60px; height: auto;">
-        </a>   
-        <a href="index.html" style="text-decoration: none; color: inherit;">    
-          <div style="color: white; text-align: center;">
-            <h1 style="margin: 0;">Kuzey Isı Mühendislik Doğalgaz</h1>
-            <p style="margin: 0;">Hizmetlerimiz</p>
-          </div>
-        </a>
+<header>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; position: relative;">
+    <a href="index.html" class="desktop-logo">
+      <img src="Logo.jpg" alt="Kuzey Doğalgaz Logo" style="width: 80px; height: 80px;">
+    </a>      
+    <a href="index.html" style="text-decoration: none; color: inherit;">
+      <div style="text-align: left;">
+        <h1 style="margin: 0; font-size: 24px;">Kuzey Isı Mühendislik Doğalgaz</h1>
+        <p style="margin: 0; font-size: 14px;">Güvenilir ve Ekonomik Doğalgaz Çözümleri</p>
       </div>
-  
-      <button onclick="toggleDarkMode()" id="themeToggle"
-              style="background: none; border: none; font-size: 24px; cursor: pointer; color: white;">
-        🌙
-      </button>
-    </div>
-  </header>
-  
-
-  <nav>
-    <a href="index.html">Anasayfa</a>
-    <a href="urunler.html">Ürünlerimiz</a>
-    <a href="index.html#contact">İletişim</a>
-  </nav>
-
+    </a>
+    <div class="brand-logos">
+      <img src="demirdöküm.png" alt="Demirdöküm">
+      <img src="DAIKIN_logo.svg.png" alt="Daikin">
+      <img src="bosch.png" alt="Bosch">
+      <img src="vailant.jpg" alt="Vaillant">
+    </div>   
+        <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>   
+  </div>
+</header>
+<nav id="mainNav">
+  <a href="index.html">Anasayfa</a>
+  <a href="urunler.html">Ürünlerimiz</a>
+  <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
+  <a href="#" onclick="openModal(); return false;">Hakkımızda</a>
+  <a href="index.html#contact">İletişim</a>
+</nav>
   <div class="container">
     <h2>Verdiğimiz Hizmetler</h2>
     <ul>
       <li>Kombi satışı ve montajı</li>
       <li>Doğalgaz tesisat kurulumu ve projelendirme</li>
-      <li>Petek montajı ve temizliği</li>
+      <li>Petek montajı</li>
       <li>Bina içi doğalgaz dönüşüm sistemleri</li>
       <li>Gaz açılış işlemleri için resmi destek</li>
       <li>Teknik servis ve arıza tespiti</li>
@@ -186,46 +400,60 @@
   <footer>
     &copy; 2025 Kuzey Isı Mühendislik Doğalgaz
   </footer>
-
+<div id="aboutModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()" style="position: absolute; top: 10px; right: 15px; font-size: 28px; cursor: pointer;">&times;</span>
+    <h2>Hakkımızda</h2>
+    <p>
+      Kuzey Isı Mühendislik Doğalgaz olarak Adana'da doğalgaz, ısıtma ve tesisat sektöründe güvenilir ve ekonomik çözümler sunan bir mühendislik firmasıyız. Faaliyet alanlarımız arasında doğalgaz iç tesisat projelendirme, kombi montajı, petek sistemleri kurulumu, sistem temizliği ve teknik servis hizmetleri yer almaktadır.
+    </p>
+    <p>
+      Müşteri memnuniyetini daima ön planda tutan firmamız, her projede ihtiyaçlara özel çözümler üreterek müşterilerine yüksek kalite ve maksimum güvenlik sunmaktadır. Alanında uzman, sertifikalı mühendis olmakla birlikte, doğalgaz dönüşüm projelerini TSE standartlarına uygun şekilde hazırlıyor; gaz açım süreçlerinde resmi onay ve işlemleri eksiksiz olarak takip ediyoruz.
+    </p>
+    <p>
+      Yalnızca kurulum aşamasında değil, satış sonrası destek, periyodik bakım, arıza tespiti ve sistem optimizasyonu hizmetleriyle de müşterilerimizin yanında yer alıyoruz. Kullandığımız tüm ürünler kalite belgeli ve garantili olup, sektörde öncü markaların çözüm ortaklığıyla çalışmaktayız.
+    </p>
+    <p>
+      Kuzey Isı Mühendislik olarak vizyonumuz, sürdürülebilir, ekonomik ve çevre dostu ısıtma sistemleri ile konforlu yaşam alanları yaratmaktır. Teknolojiyi yakından takip ederek enerji verimliliği yüksek, modern ve uzun ömürlü sistemlerle yaşamınıza değer katmaya devam ediyoruz.
+    </p>
+  </div>
+</div>
   <!-- Büyütülmüş Görsel Modalı -->
   <div id="imageModal" onclick="closeModal()">
     <img id="modalImage" src="" alt="Büyütülmüş Görsel">
   </div>
 
-  <script>
-    function openModal(img) {
-      document.getElementById("modalImage").src = img.src;
-      document.getElementById("imageModal").style.display = "flex";
-    }
-
-    function closeModal() {
-      document.getElementById("imageModal").style.display = "none";
-    }
-
-    function toggleDarkMode() {
-      const body = document.body;
-      const toggle = document.getElementById("themeToggle");
-
-      body.classList.toggle("dark");
-
-      if (body.classList.contains("dark")) {
-        toggle.textContent = "☀️";
-        localStorage.setItem("theme", "dark");
-      } else {
-        toggle.textContent = "🌙";
-        localStorage.setItem("theme", "light");
-      }
-    }
-
-    window.onload = function () {
-      const theme = localStorage.getItem("theme");
-      const toggle = document.getElementById("themeToggle");
-
-      if (theme === "dark") {
-        document.body.classList.add("dark");
-        toggle.textContent = "☀️";
-      }
-    };
-  </script>
+<script>
+function openModal() {
+  const modal = document.getElementById("aboutModal");
+  modal.style.display = "flex";
+}
+function closeModal() {
+  document.getElementById("aboutModal").style.display = "none";
+}
+  function toggleMenu() {
+    const nav = document.getElementById("mainNav");
+    const burger = document.querySelector(".hamburger");
+    nav.classList.toggle("active");
+    burger.classList.toggle("open");
+  }
+  window.onclick = function(event) {
+  const modal = document.getElementById("aboutModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+    <div class="floating-icons">
+    <a href="tel:905514424188" class="icon-button phone" title="Ara">
+      <img src="telefon.png" alt="Telefon">
+    </a>
+    <a href="https://wa.me/905514424188" target="_blank" class="icon-button whatsapp" title="WhatsApp">
+      <img src="WhatsApp.svg.webp" alt="WhatsApp">
+    </a>
+    <a href="https://maps.app.goo.gl/fFCMVRGMjXDCPKcq5" target="_blank" class="icon-button location" title="Konum">
+      <img src="konum.png" alt="Konum">
+    </a>
+  </div>
 </body>
 </html>

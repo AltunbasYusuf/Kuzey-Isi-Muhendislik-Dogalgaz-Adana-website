@@ -68,7 +68,7 @@ nav a:hover {
 
 .slide {
   min-width: 100%;
-  height: 600px; /* Slider yüksekliği */
+  height: 700px; /* Slider yüksekliği */
   background-size: 100% 100%; /* Tam oturması için */
   background-position: center;
   background-repeat: no-repeat;
@@ -197,10 +197,73 @@ nav a:hover {
       height: 150px;
       object-fit: cover;
     }
+    .product h3 {
+  background-color: #0a2f4f;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  margin: 15px 0 10px;
+  padding: 10px 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0a2f4f;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  border-bottom: 3px solid #0a2f4f;
+  transition: all 0.3s ease;
+}
     .contact {
       text-align: center;
       padding: 20px 10px;
       background-color: #e0f2ff;
+      .contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button img {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-button.phone {
+  background-color: #e63946;
+}
+
+.contact-button:hover {
+  filter: brightness(1.1);
+}
+
     }
     footer {
       background-color: #0a2f4f;
@@ -215,36 +278,46 @@ nav a:hover {
       margin-top: 10px;
       margin-bottom: 10px;
     }
-    #aboutModal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-    }
-    #aboutModal .modal-content {
-      background-color: white;
-      padding: 30px;
-      max-width: 600px;
-      border-radius: 10px;
-      position: relative;
-    }
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 24px;
-      cursor: pointer;
-      color: #555;
-    }
-    .close:hover {
-      color: black;
-    }
+#aboutModal {
+  display: none;
+  position: fixed;
+  z-index: 3000; /* hamburger'den yüksek */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.75);
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+#aboutModal .modal-content {
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 12px;
+  max-width: 95%;
+  max-height: 90%;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#aboutModal .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 34px;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  z-index: 3100;
+}
+
+#aboutModal .close:hover {
+  color: #d10000;
+}
+
     .floating-wp {
       position: fixed;
       bottom: 20px;
@@ -373,9 +446,7 @@ nav a:hover {
   .product {
     width: 90%;
   }
-  .section h2 {
-    text-align: center;
-  }
+
 }
 .brand-logos {
   display: flex;
@@ -449,6 +520,29 @@ nav a:hover {
 .desktop-logo {
   display: block;
 }
+.call-box {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.call-box a {
+  display: inline-block;
+  background-color: #0a2f4f;
+  color: white;
+  padding: 25px 50px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.call-box a:hover {
+  background-color: #1e5a8c;
+  transform: scale(1.05);
+}
+
   </style>
 </head>
 <body>
@@ -486,19 +580,22 @@ nav a:hover {
     <a href="index.html">Anasayfa</a>
     <a href="urunler.html">Ürünlerimiz</a>
     <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
-    <a onclick="openModal()">Hakkımızda</a>
+   <a href="#" onclick="openModal(); return false;">Hakkımızda</a>
     <a href="#contact">İletişim</a>
   </nav>
   <div class="slider-container">
     <div class="slider">
       <div class="slides">
-        <div class="slide" style="background-image: url('vrv-teknolojisi-ile-her-mekana-uygun-cozum.webp');"></div>
+        <div class="slide" style="background-image: url('Kampanya1.png');"></div>
         <div class="slide" style="background-image: url('dinaxor-klimalar-ile-dort-mevsim-konfor.webp');"></div>
         <!-- Diğer slaytları aynı şekilde ekle -->
       </div>
       <button class="prev" onclick="prevSlide()">❮</button>
       <button class="next" onclick="nextSlide()">❯</button>    
     </div>
+  </div>  
+  <div class="call-box">
+    <a href="tel:05514424188">📞 Ücretsiz Keşif İçin Hemen Ara!</a>
   </div>  
   <div class="section" id="products">
     <h2>Demirdöküm</h2>
@@ -536,39 +633,47 @@ nav a:hover {
     <h2>Daikin</h2>
     <div class="products">
       <div class="product">
-        <img src="icon.webp" alt="Daikin Klima Model X">
-        <h3>Icon Premix (D2CBP020)</h3>
-        <p>Tam Yoğuşmalı Kombi</p>
+        <img src="icon.webp" alt="Daikin Kombi Model Icon">
+        <h3>Icon Premix Tam Yoğuşmalı Kombi</h3>
+        <ul>
+          <li>A Enerji sınıfı</li>
+          <li>Doğal gaz ve LPG (Propan) ile kullanıma uygundur.</li>
+          <li>Yeni nesil paslanmaz çelik ısı eşanjörü</li>
+        </ul>
       </div>
       <div class="product">
-        <img src="ndj.webp" alt="Daikin Klima Model Y">
-        <h3>NDJ Premix 35 KW (D2CND035)</h3>
-        <p>Tam Yoğuşmalı Kombi</p>
+        <img src="csu.webp" alt="Daikin Kombi Model CSU">
+        <h3>CSU Premix 24 kW Tam Yoğuşmalı Kombi</h3>
+        <ul>
+          <li>A Enerji sınıfı</li>
+          <li>Güneş enerjisi ile uyumlu çalışma</li>
+          <li>Yoğuşma teknolojisi ile yüksek oranda yakıt tasarrufu</li>
+        </ul>
       </div>
       <div class="product">
-        <img src="ndj2.webp" alt="Daikin Klima Model Z">
-        <h3>NDJ Premix 24 KW (D2CND024)</h3>
-        <p>Tam Yoğuşmalı Kombi</p>
-      </div>  
+        <img src="ndj2.webp" alt="Daikin Kombi Model NDJ">
+        <h3>NDJ Premix 24 KW Tam Yoğuşmalı Kombi</h3>
+        <ul>
+          <li>A Enerji sınıfı</li>
+          <li>Paslanmaz çelik plakalı eşanjör</li>
+          <li>Sessiz kombi (Ses gücü 49 db, ses basıncı 39 db)</li>
+        </ul>      </div>  
     </div>
   </div>
   <div class="section contact" id="contact">
     <h2 style="margin-left: 15px;">İletişim</h2>
-    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 15px;">
-      <p style="margin: 0; font-size: 18px;">
-        <img src="WhatsApp.svg.webp" alt="WhatsApp" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;">
-        0 (551) 442 41 88
-      </p>
-      <a href="https://wa.me/905514424188" target="_blank"
-         style="display: inline-block; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">
-         WhatsApp ile İletişime Geç</a>
-
-      <a href="https://www.instagram.com/kuzey_dogalgaz" target="_blank"
-         style="display: inline-flex; align-items: center; background-color: #E1306C; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">
-         <img src="Instagram logo.jpg" alt="Instagram" style="width: 20px; height: 20px; margin-right: 8px;">
-         Instagram
+    <div class="contact-links">
+      <a href="tel:05514424188" class="contact-button phone">
+        <img src="telefon.png" alt="Telefon"> 0 (551) 442 41 88
       </a>
-    </div>
+      <a href="https://wa.me/905514424188" class="contact-button" target="_blank">
+        <img src="WhatsApp.svg.webp" alt="WhatsApp"> WhatsApp ile İletişime Geç
+      </a>
+    
+      <a href="https://www.instagram.com/kuzey_dogalgaz" class="contact-button" style="background-color:#E1306C;" target="_blank">
+        <img src="Instagram logo.jpg" alt="Instagram"> Instagram
+      </a>
+    </div>    
     <p>
       📍 <strong>Adres:</strong>
       <a href="https://maps.app.goo.gl/fFCMVRGMjXDCPKcq5" target="_blank" style="text-decoration: underline; color: inherit;">
@@ -584,42 +689,66 @@ nav a:hover {
   <footer>
     <p>&copy; 2025 Kuzey Isı Mühendislik Doğalgaz. Tüm hakları saklıdır.</p>
   </footer>
-  <div id="aboutModal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Hakkımızda</h2>
-      <p>
-        Kuzey Isı Mühendislik Doğalgaz, Adana’da güvenilir ve ekonomik doğalgaz çözümleri sunan uzman bir mühendislik firmasıdır.
-        Kombi, tesisat ve doğalgaz sistemleri alanında deneyimli ekibimizle, müşteri memnuniyetini en ön planda tutarak hizmet veriyoruz.
-        Yılların verdiği tecrübe ve teknolojik altyapımızla, ısıtma sistemleriniz için en doğru çözümleri sunmayı hedefliyoruz.
-      </p>
-    </div>
+<div id="aboutModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Hakkımızda</h2>
+    <p>
+      Kuzey Isı Mühendislik Doğalgaz olarak Adana'da doğalgaz, ısıtma ve tesisat sektöründe güvenilir ve ekonomik çözümler sunan bir mühendislik firmasıyız. Faaliyet alanlarımız arasında doğalgaz iç tesisat projelendirme, kombi montajı, petek sistemleri kurulumu, sistem temizliği ve teknik servis hizmetleri yer almaktadır.
+    </p>
+    <p>
+      Müşteri memnuniyetini daima ön planda tutan firmamız, her projede ihtiyaçlara özel çözümler üreterek müşterilerine yüksek kalite ve maksimum güvenlik sunmaktadır. Alanında uzman, sertifikalı mühendis olmakla birlikte, doğalgaz dönüşüm projelerini TSE standartlarına uygun şekilde hazırlıyor; gaz açım süreçlerinde resmi onay ve işlemleri eksiksiz olarak takip ediyoruz.
+    </p>
+    <p>
+      Yalnızca kurulum aşamasında değil, satış sonrası destek, periyodik bakım, arıza tespiti ve sistem optimizasyonu hizmetleriyle de müşterilerimizin yanında yer alıyoruz. Kullandığımız tüm ürünler kalite belgeli ve garantili olup, sektörde öncü markaların çözüm ortaklığıyla çalışmaktayız.
+    </p>
+    <p>
+      Kuzey Isı Mühendislik olarak vizyonumuz, sürdürülebilir, ekonomik ve çevre dostu ısıtma sistemleri ile konforlu yaşam alanları yaratmaktır. Teknolojiyi yakından takip ederek enerji verimliliği yüksek, modern ve uzun ömürlü sistemlerle yaşamınıza değer katmaya devam ediyoruz.
+    </p>
   </div>
+</div>
   <script>
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 const slidesContainer = document.querySelector('.slides');
+let slideInterval;
+
 function showSlide(index) {
-  // Slider'ı kaydır
   slidesContainer.style.transform = `translateX(-${index * 100}%)`;
 }
+
 function nextSlide() {
   currentSlide = (currentSlide + 1) % totalSlides;
   showSlide(currentSlide);
+  resetAutoSlide();
 }
+
 function prevSlide() {
   currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
   showSlide(currentSlide);
+  resetAutoSlide();
 }
-// Başlangıçta ilk slaytı göster
+
+function startAutoSlide() {
+  slideInterval = setInterval(() => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+  }, 6000);
+}
+
+function resetAutoSlide() {
+  clearInterval(slideInterval);
+  startAutoSlide();
+}
+
 window.onload = function () {
   showSlide(currentSlide);
-  setInterval(nextSlide, 6000);
+  startAutoSlide();
 };
-// Scroll ile belirginleşen bölümler (scroll reveal)
-const sections = document.querySelectorAll('.section');
 
+// Scroll reveal
+const sections = document.querySelectorAll('.section');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -627,22 +756,25 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.style.transform = 'translateY(0)';
     }
   });
-}, {
-  threshold: 0.2
-});
+}, { threshold: 0.2 });
 
 sections.forEach(section => {
   observer.observe(section);
 });
+
 function toggleMenu() {
   const nav = document.getElementById("mainNav");
   const burger = document.querySelector(".hamburger");
   nav.classList.toggle("active");
   burger.classList.toggle("open");
 }
-  </script>
-  
-  
+function openModal() {
+  document.getElementById("aboutModal").style.display = "flex";
+}
+function closeModal() {
+  document.getElementById("aboutModal").style.display = "none";
+}
+</script>
   <div class="floating-icons">
     <a href="tel:905514424188" class="icon-button phone" title="Ara">
       <img src="telefon.png" alt="Telefon">
@@ -654,7 +786,5 @@ function toggleMenu() {
       <img src="konum.png" alt="Konum">
     </a>
   </div>
-  
-
 </body>
 </html>
