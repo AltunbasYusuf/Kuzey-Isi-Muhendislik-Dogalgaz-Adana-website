@@ -18,7 +18,7 @@
     }
     header {
       background-color: #0a2f4f;
-      color: white;
+      color: rgb(255, 255, 255);
       padding: 20px;
       text-align: center;
     }
@@ -175,41 +175,99 @@ nav a:hover {
     .section h2 {
       text-align: left;
     }
-    .products {
+   .products {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   justify-content: center;
-  align-items: stretch;
-  max-width: 1200px; /* veya %100 */
-  margin: auto;
+  align-items: flex-start;
+  padding: 20px;
 }
+
 .product {
-  width: 300px;
-  flex-shrink: 0;
+  background: linear-gradient(135deg, #0a2f4f, #4195ac); /* koyu lacivertten maviye */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: 280px;
+  text-align: center;
+  padding-bottom: 10px;
 }
+
 .product:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
-    .product img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-    .product h3 {
+
+.product img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.product h3 {
   background-color: #0a2f4f;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 600;
-  text-align: center;
-  margin: 15px 0 10px;
-  padding: 10px 8px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  letter-spacing: 0.5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  color: white;
+  font-size: 18px;
+  padding: 12px;
+  margin: 0;
 }
+
+.product ul {
+  list-style-type: disc;
+  text-align: left;
+  padding: 15px 20px;
+  margin: 0;
+  font-size: 15px;
+  color: #333;
+}
+.products.custom-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+  gap: 40px;
+  margin-top: 40px;
+}
+.products.custom-layout .product {
+  background-color: #f5f7fb;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.products.custom-layout .product:hover {
+  transform: scale(1.02);
+}
+.products.custom-layout .product img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+.products.custom-layout .product h3 {
+  background: none;
+  color: #000;
+  margin: 0;
+  padding: 12px;
+  font-size: 16px;
+}
+.products.custom-layout .top-left,
+.products.custom-layout .top-right {
+  width: 240px;
+  align-self: flex-start;
+}
+.products.custom-layout .bottom-center {
+  width: 240px;
+  margin-top: 80px;
+}
+
+
 .section h2 {
   font-size: 24px;
   font-weight: bold;
@@ -597,69 +655,59 @@ nav a:hover {
   <div class="call-box">
     <a href="tel:05514424188">📞 Ücretsiz Keşif İçin Hemen Ara!</a>
   </div>  
-  <div class="section" id="products">
-    <h2>Demirdöküm</h2>
-    <div class="products">
-      <div class="product">
-        <img src="Ademix.png" alt="Demirdöküm Kombi Model Ademix">
-        <h3>DemirDöküm Ademix Yoğuşmalı Kombi</h3>
-        <ul>
-          <li>A Sınıfı Yüksek Isıtma Verimi</li>
-          <li>Akıllı Isıtma Sistemi</li>
-          <li>Dünyadan Ödüllü Şık Tasarım</li>
-        </ul>
-      </div>
-      <div class="product">
-        <img src="Nitromix.png" alt="Demirdöküm Kombi Model Nitromix">
-        <h3>Nitromix Duvar Tipi Hermetik Yoğuşmalı Kombi</h3>
-        <ul>
-          <li>ERP Yönetmeliğine Uygun A Sınıfı Isıtma ve Sıcak Su Verimliliği</li>
-            <li>Maksimum Isı ve Sıcak Su Konforu</li>
-              <li>Düşük Doğalgaz Tüketimi</li>
-        </ul>
-      </div>   
-        <div class="product">
-          <img src="Vintomix.png" alt="Demirdöküm Kombi Model Vintomix">
-          <h3>DemirDöküm Vintomix Yoğuşmalı Kombi</h3>
-          <ul>
-            <li>A Sınıfı Yüksek Isıtma Verimi</li>
-            <li>Yüksek Verimli Pompa ile Elektrik Tasarrufu</li>
-            <li>Yüksek Sıcak Su Konforu</li>
-          </ul>
-        </div>         
+ <div class="section" id="products">
+  <h2>Demirdöküm Serileri</h2>
+  <div class="products custom-layout">
+    <div class="product top-left">
+      <img src="Ademix.png" alt="Ademix Serisi">
+      <h3>ADEMİX SERİSİ</h3>
+    </div>
+    <div class="product bottom-center">
+      <img src="Nitromix.png" alt="Pure ve Pro Serisi">
+      <h3>NİTROMİX SERİSİ</h3>
+    </div>
+    <div class="product top-right">
+      <img src="Vintomix.png" alt="Plus Serisi">
+      <h3>VİNTOMİX SERİSİ</h3>
     </div>
   </div>
-    <div class="section" id="products">
-    <h2>Daikin</h2>
-    <div class="products">
-      <div class="product">
-        <img src="icon.webp" alt="Daikin Kombi Model Icon">
-        <h3>Icon Premix Tam Yoğuşmalı Kombi</h3>
-        <ul>
-          <li>A Enerji sınıfı</li>
-          <li>Doğal gaz ve LPG (Propan) ile kullanıma uygundur.</li>
-          <li>Yeni nesil paslanmaz çelik ısı eşanjörü</li>
-        </ul>
-      </div>
-      <div class="product">
-        <img src="csu.webp" alt="Daikin Kombi Model CSU">
-        <h3>CSU Premix 24 kW Tam Yoğuşmalı Kombi</h3>
-        <ul>
-          <li>A Enerji sınıfı</li>
-          <li>Güneş enerjisi ile uyumlu çalışma</li>
-          <li>Yoğuşma teknolojisi ile yüksek oranda yakıt tasarrufu</li>
-        </ul>
-      </div>
-      <div class="product">
-        <img src="ndj2.webp" alt="Daikin Kombi Model NDJ">
-        <h3>NDJ Premix 24 KW Tam Yoğuşmalı Kombi</h3>
-        <ul>
-          <li>A Enerji sınıfı</li>
-          <li>Paslanmaz çelik plakalı eşanjör</li>
-          <li>Sessiz kombi (Ses gücü 49 db, ses basıncı 39 db)</li>
-        </ul>      </div>  
+</div>
+
+
+<div class="section" id="products-daikin">
+  <h2>Daikin</h2>
+  <div class="products">
+    <div class="product">
+      <img src="icon.webp" alt="Daikin Kombi Model Icon">
+      <h3>Icon Premix Tam Yoğuşmalı Kombi</h3>
+      <ul>
+        <li>A Enerji sınıfı</li>
+        <li>Doğal gaz ve LPG (Propan) ile kullanıma uygundur.</li>
+        <li>Yeni nesil paslanmaz çelik ısı eşanjörü</li>
+      </ul>
+    </div>
+
+    <div class="product">
+      <img src="csu.webp" alt="Daikin Kombi Model CSU">
+      <h3>CSU Premix 24 kW Tam Yoğuşmalı Kombi</h3>
+      <ul>
+        <li>A Enerji sınıfı</li>
+        <li>Güneş enerjisi ile uyumlu çalışma</li>
+        <li>Yoğuşma teknolojisi ile yüksek oranda yakıt tasarrufu</li>
+      </ul>
+    </div>
+
+    <div class="product">
+      <img src="ndj2.webp" alt="Daikin Kombi Model NDJ">
+      <h3>NDJ Premix 24 KW Tam Yoğuşmalı Kombi</h3>
+      <ul>
+        <li>A Enerji sınıfı</li>
+        <li>Paslanmaz çelik plakalı eşanjör</li>
+        <li>Sessiz kombi (Ses gücü 49 db, ses basıncı 39 db)</li>
+      </ul>
     </div>
   </div>
+</div>
   <div class="section contact" id="contact">
     <h2 style="margin-left: 15px;">İletişim</h2>
     <div class="contact-links">
