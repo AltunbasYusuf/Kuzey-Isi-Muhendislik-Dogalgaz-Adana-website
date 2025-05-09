@@ -51,26 +51,46 @@ nav a:hover {
       color: #0a2f4f;
       margin-bottom: 10px;
     }
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .product {
-      width: 200px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 10px;
-      text-align: center;
-      background-color: white;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-    .product img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
+
+.full-product-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  margin: 100px auto;
+  max-width: 1200px;
+  padding: 40px 20px;
+}
+
+.full-product-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.full-product-block img {
+  width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.full-product-block .features {
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.full-product-block h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #0a2f4f;
+}
+
+.product-features li {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+
     footer {
       text-align: center;
       padding: 15px;
@@ -257,6 +277,34 @@ nav a:hover {
   .product {
     width: 90%;
   }
+.full-product-block {
+  flex-direction: column !important;
+  gap: 30px;
+  text-align: center;
+}
+
+.full-product-block.reverse {
+  flex-direction: column !important;
+}
+
+.full-product-block img {
+  width: 80%;
+  max-width: 350px;
+}
+
+.full-product-block .features,
+.full-product-block .product-info,
+.full-product-block .product-features {
+  text-align: center;
+}
+
+.full-product-block h2 {
+  font-size: 22px;
+}
+
+.product-features li {
+  font-size: 16px;
+}
 
 }
 #aboutModal {
@@ -334,23 +382,87 @@ nav a:hover {
 </nav>
 
   <div class="container">
-    <h2>Sunulan Ürünler</h2>
+    <h2>Kombiler</h2>
     <div class="products">
-      <div class="product">
-        <img src="icon.webp" alt="Kombi Model X">
-        <h3>Kombi Modelleri</h3>
-        <p>Yüksek verimli ve tasarruflu çözümler</p>
-      </div>
-      <div class="product">
-        <img src="Urunler.webp" alt="Tesisat Malzemeleri">
-        <h3>Tesisat Parçaları</h3>
-        <p>Bağlantı elemanları, vanalar, hortumlar</p>
-      </div>
-      <div class="product">
-        <img src="Nitromix.png" alt="Petek">
-        <h3>Kombi Modelleri</h3>
-        <p>Farklı ölçü ve tasarımda kombiler</p>
-      </div>
+<!-- Yeni Ürün Bloğu Yapısı -->
+<div class="full-product-block">
+  <img src="Ademix.png" alt="Ademix Kombi">
+  <div class="features">
+    <h2>Ademix Serisi</h2>
+    <ul>
+      <li>Yüksek enerji verimliliği</li>
+      <li>Modern tasarım</li>
+      <li>Kolay kurulum</li>
+      <li>A++ sınıfı</li>
+    </ul>
+  </div>
+</div>
+
+<div class="full-product-block reverse">
+  <div class="product-info">
+    <img src="Nitromix.png" alt="Nitromix Kombi" class="product-image">
+  </div>
+  <ul class="product-features">
+     <h2>Nitromix Serisi</h2>
+    <li>24 kW tam yoğuşmalı sistem</li>
+    <li>Ergonomik kumanda paneli</li>
+    <li>Düşük ses seviyesi</li>
+    <li>Enerji tasarruf modu</li>
+  </ul>
+</div>
+
+<div class="full-product-block">
+  <div class="product-info">
+    <img src="Vintomix.png" alt="Vintomix Kombi" class="product-image">
+  </div>
+  <ul class="product-features">
+    <h2>Vintomix Serisi</h2>
+    <li>24 kW tam yoğuşmalı sistem</li>
+    <li>Ergonomik kumanda paneli</li>
+    <li>Düşük ses seviyesi</li>
+    <li>Enerji tasarruf modu</li>
+  </ul>
+</div>
+
+<div class="full-product-block reverse">
+  <div class="product-info">
+    <img src="icon.webp" alt="Icon Kombi" class="product-image">
+  </div>
+  <ul class="product-features">
+    <h2>Icon Premix</h2>
+    <li>Yüksek enerji verimliliği</li>
+    <li>Modern tasarım</li>
+    <li>Kolay kurulum</li>
+    <li>A++ sınıfı</li>
+  </ul>
+</div>
+
+<div class="full-product-block">
+  <div class="product-info">
+    <img src="ndj2.webp" alt="NDJ Kombi" class="product-image">
+  </div>
+  <ul class="product-features">
+    <h2>NDJ Serisi</h2>
+    <li>24 kW tam yoğuşmalı sistem</li>
+    <li>Ergonomik kumanda paneli</li>
+    <li>Düşük ses seviyesi</li>
+    <li>Enerji tasarruf modu</li>
+  </ul>
+</div>
+
+<div class="full-product-block reverse">
+  <div class="product-info">
+    <img src="csu.webp" alt="CSU Kombi" class="product-image">
+  </div>
+  <ul class="product-features">
+    <h2>CSU Serisi</h2>
+    <li>Yüksek enerji verimliliği</li>
+    <li>Modern tasarım</li>
+    <li>Kolay kurulum</li>
+    <li>A++ sınıfı</li>
+  </ul>
+</div>
+
     </div>
   </div>
   <footer>
