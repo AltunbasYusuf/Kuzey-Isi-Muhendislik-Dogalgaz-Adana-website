@@ -185,7 +185,7 @@ nav a:hover {
 }
 
 .product {
-  background: linear-gradient(135deg, #0a2f4f, #4195ac); /* koyu lacivertten maviye */
+  background: linear-gradient(135deg, #2992ed, #ffffff); /* koyu lacivertten maviye */
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
@@ -534,8 +534,8 @@ nav a:hover {
 }
 
 .icon-button {
-  width: 52px;
-  height: 52px;
+  width: 60px;
+  height: 60px;
   background-color: white;
   border-radius: 50%;
   box-shadow: 0 3px 10px rgba(0,0,0,0.2);
@@ -600,7 +600,19 @@ nav a:hover {
   background-color: #1e5a8c;
   transform: scale(1.05);
 }
-
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 2px 6px;
+  font-weight: bold;
+  display: none;
+  z-index: 1001;
+}
   </style>
 </head>
 <body>
@@ -644,9 +656,10 @@ nav a:hover {
   <div class="slider-container">
     <div class="slider">
       <div class="slides">
+        <div class="slide" style="background-image: url('Slayt1.png');"></div>
+        <div class="slide" style="background-image: url('Slayt2.png');"></div>
         <div class="slide" style="background-image: url('Kampanya1.png');"></div>
-        <div class="slide" style="background-image: url('dinaxor-klimalar-ile-dort-mevsim-konfor.webp');"></div>
-        <!-- Diğer slaytları aynı şekilde ekle -->
+        <div class="slide" style="background-image: url('kredikart.png');"></div>
       </div>
       <button class="prev" onclick="prevSlide()">❮</button>
       <button class="next" onclick="nextSlide()">❯</button>    
@@ -656,7 +669,7 @@ nav a:hover {
     <a href="tel:05514424188">📞 Ücretsiz Keşif İçin Hemen Ara!</a>
   </div>  
  <div class="section" id="products">
-  <h2>Demirdöküm Serileri</h2>
+<img src="demirdöküm.png" alt="Demirdöküm Kampanya Başlık" style="width: 100%; max-width: 700px; display: block; margin: 0 auto 30px auto;">
   <div class="products custom-layout">
     <div class="product top-left">
       <img src="Ademix.png" alt="Ademix Serisi">
@@ -672,42 +685,27 @@ nav a:hover {
     </div>
   </div>
 </div>
-
-
 <div class="section" id="products-daikin">
-  <h2>Daikin</h2>
-  <div class="products">
-    <div class="product">
+  <img src="DAIKIN_logo.svg.png" alt="Daikin Kampanya Başlık" style="width: 100%; max-width: 800px; display: block; margin: 0 auto 30px auto;">
+
+  <div class="products custom-layout">
+    <div class="product top-left">
       <img src="icon.webp" alt="Daikin Kombi Model Icon">
       <h3>Icon Premix Tam Yoğuşmalı Kombi</h3>
-      <ul>
-        <li>A Enerji sınıfı</li>
-        <li>Doğal gaz ve LPG (Propan) ile kullanıma uygundur.</li>
-        <li>Yeni nesil paslanmaz çelik ısı eşanjörü</li>
-      </ul>
     </div>
 
-    <div class="product">
+    <div class="product bottom-center">
       <img src="csu.webp" alt="Daikin Kombi Model CSU">
       <h3>CSU Premix 24 kW Tam Yoğuşmalı Kombi</h3>
-      <ul>
-        <li>A Enerji sınıfı</li>
-        <li>Güneş enerjisi ile uyumlu çalışma</li>
-        <li>Yoğuşma teknolojisi ile yüksek oranda yakıt tasarrufu</li>
-      </ul>
     </div>
 
-    <div class="product">
+    <div class="product top-right">
       <img src="ndj2.webp" alt="Daikin Kombi Model NDJ">
       <h3>NDJ Premix 24 KW Tam Yoğuşmalı Kombi</h3>
-      <ul>
-        <li>A Enerji sınıfı</li>
-        <li>Paslanmaz çelik plakalı eşanjör</li>
-        <li>Sessiz kombi (Ses gücü 49 db, ses basıncı 39 db)</li>
-      </ul>
     </div>
   </div>
 </div>
+
   <div class="section contact" id="contact">
     <h2 style="margin-left: 15px;">İletişim</h2>
     <div class="contact-links">
@@ -755,6 +753,9 @@ nav a:hover {
     </p>
   </div>
 </div>
+<audio id="wpSound" src="notification.mp3" preload="auto">
+  <source src="notification.mp3" type="audio/mpeg">
+</audio>
   <script>
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
@@ -822,14 +823,29 @@ function openModal() {
 function closeModal() {
   document.getElementById("aboutModal").style.display = "none";
 }
+window.addEventListener("load", function () {
+  setTimeout(() => {
+const badge = document.getElementById("whatsappBadge");
+const sound = document.getElementById("wpSound"); // BU ŞEKİLDE OLMALI!
+
+badge.style.display = "inline";
+sound.volume = 0.5; // sesi biraz daha kısalım
+sound.play().catch(e => console.log("Ses engellendi: Kullanıcı etkileşimi yok."));
+  }, 4000); // 4 saniye sonra çalışır
+});
+  const wpSound = document.getElementById('wpSound');
+  if (wpSound) {
+    wpSound.volume = 0.5; // 0 ile 1 arasında bir değer (0.0 = sessiz, 1.0 = tam ses)
+  }
 </script>
   <div class="floating-icons">
     <a href="tel:905514424188" class="icon-button phone" title="Ara">
       <img src="telefon.png" alt="Telefon">
     </a>
-    <a href="https://wa.me/905514424188" target="_blank" class="icon-button whatsapp" title="WhatsApp">
-      <img src="WhatsApp.svg.webp" alt="WhatsApp">
-    </a>
+<a href="https://wa.me/905514424188" target="_blank" class="icon-button whatsapp" title="WhatsApp" id="whatsappIcon">
+  <img src="WhatsApp.svg.webp" alt="WhatsApp">
+  <span class="notification-badge" id="whatsappBadge">1</span>
+</a>
     <a href="https://maps.app.goo.gl/fFCMVRGMjXDCPKcq5" target="_blank" class="icon-button location" title="Konum">
       <img src="konum.png" alt="Konum">
     </a>
