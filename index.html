@@ -83,7 +83,8 @@ nav a:hover {
 }
 .slider-container {
   position: relative;
-  width: 100%;
+  width: 90%;
+  margin: 30px auto 0 auto; /* Üstten 30px boşluk */
   overflow: hidden;
 }
 
@@ -118,9 +119,9 @@ nav a:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 30px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 40px;
+  color: #ffffff;
+  background-color:transparent;
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -140,69 +141,7 @@ nav a:hover {
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.floating-wp-wrapper {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px; /* Kutular arası boşluk */
-}
 
-.wp-box {
-  display: flex;
-  align-items: center;
-  background: #25D366;
-  padding: 10px 14px;
-  border-radius: 20px;
-  gap: 12px;
-  animation: pulse 2s infinite;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  min-width: 220px;
-}
-
-.wp-text {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  font-size: 13.5px;
-  line-height: 1.2;
-  flex: 1;
-}
-
-.wp-label {
-  font-weight: bold;
-}
-
-.wp-number {
-  font-size: 13px;
-  opacity: 0.9;
-}
-
-.wp-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  box-shadow: 0 0 6px rgba(0,0,0,0.2);
-}
-
-.wp-icon img {
-  width: 22px;
-  height: 22px;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
     .section h2 {
       text-align: left;
     }
@@ -406,21 +345,6 @@ nav a:hover {
 #aboutModal .close:hover {
   color: #d10000;
 }
-
-    .floating-wp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-      background-color: #25D366;
-      padding: 10px;
-      border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
-    .floating-wp img {
-      width: 30px;
-      height: 30px;
-    }
     .brand-logos-mobile {
   display: none;
 }
@@ -429,11 +353,8 @@ nav a:hover {
     display: none !important;
   }
   .slide {
-    aspect-ratio: 16 / 9;
-    height: auto;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    height: 250px;
+    background-size: cover;
   }
       .brand-logos-mobile {
     display: flex;
@@ -568,8 +489,8 @@ nav a:hover {
 }
 
 .icon-button {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-color: white;
   border-radius: 50%;
   box-shadow: 0 3px 10px rgba(0,0,0,0.2);
@@ -581,8 +502,8 @@ nav a:hover {
 }
 
 .icon-button img {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
   transition: transform 0.3s ease;
 }
 
