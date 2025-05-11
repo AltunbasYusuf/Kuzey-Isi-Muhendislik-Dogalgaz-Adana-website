@@ -352,6 +352,32 @@ nav a:hover {
       .desktop-logo {
     display: none !important;
   }
+    .products.custom-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch; /* Ürünlerin aynı yükseklikte olmasını sağlar */
+    gap: 20px; /* Ürünler arasındaki boşluk */
+  }
+
+  .products.custom-layout .product {
+    flex: 1 1 100%; /* Ürünler tam genişlikte görünür */
+    max-width: 100%; /* Maksimum genişlik */
+    margin: 0 auto; /* Ortalanır */
+    box-sizing: border-box; /* Kenar boşluklarını hesaba kat */
+  }
+
+  .products.custom-layout .product img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .products.custom-layout .product h3 {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+  }
   .slide {
     height: 250px;
     background-size: cover;
@@ -466,15 +492,17 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40px; /* Logolar arası boşluk */
+  gap: 20px; /* Logolar arası boşluk */
   padding: 20px 0;
 }
+
 .brand-logos img {
-  height: 50px; /* Logoların yüksekliği */
-  width: 150px; /* Genişlik otomatik ayarlanır */
-  object-fit: contain;
+  height: 45px; /* Logoların yüksekliği */
+  width: auto; /* Genişlik otomatik ayarlanır */
+  object-fit: contain; /* Görsellerin düzgün oturması */
   transition: transform 0.3s ease;
 }
+
 .brand-logos img:hover {
   transform: scale(1.1); /* Hover efekti */
 }
