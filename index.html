@@ -596,18 +596,88 @@ nav a:hover {
   display: none;
   z-index: 1001;
 }
+/* Header Tasarımı */
+.custom-header {
+  background-color: #0a2f4f; /* Arka plan rengi */
+  color: white; /* Yazı rengi */
+  padding: 20px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid #1e5a8c; /* Alt çizgi */
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Logo ve yazı arasındaki boşluk */
+  max-width: 1200px;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+.header-text {
+  text-align: left;
+}
+
+.header-text h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.header-text p {
+  font-size: 14px;
+  margin: 5px 0 0 0;
+  color: #d1e7ff; /* Daha açık bir ton */
+}
+
+/* Mobil Uyum */
+@media (max-width: 768px) {
+  .custom-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-text h1 {
+    font-size: 20px;
+  }
+
+  .header-text p {
+    font-size: 12px;
+  }
+
+  .logo {
+    width: 60px;
+  }
+}
   </style>
 </head>
 <body>
-  <header>
-    <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; position: relative;">
-      <a href="index.html" class="desktop-logo">
-        <img src="Logo.webp" alt="Kuzey Doğalgaz Logo" style="width: 100px; height: 100px;">
-      </a>      
-      <a href="index.html" style="text-decoration: none; color: inherit;">
-        <div style="text-align: left;">
-          <h1 style="margin: 0; font-size: 24px;">Kuzey Isı Mühendislik Doğalgaz</h1>
-          <p style="margin: 0; font-size: 14px;">Güvenilir ve Ekonomik Doğalgaz Çözümleri</p>
+<header class="custom-header">
+  <div class="header-container">
+    <a href="index.html" class="logo-container">
+      <img src="Logo.webp" alt="Kuzey Doğalgaz Logo" class="logo">
+    </a>
+    <div class="header-text">
+      <h1>Kuzey Isı Mühendislik Doğalgaz</h1>
+      <p>Güvenilir ve Ekonomik Doğalgaz Çözümleri</p>
         </div>
       </a>
       <div class="brand-logos">
