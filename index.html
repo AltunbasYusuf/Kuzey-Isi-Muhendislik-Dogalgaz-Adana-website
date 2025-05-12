@@ -95,37 +95,28 @@ nav a:hover {
 .slider-container {
   position: relative;
   width: 90%;
-  margin: 30px auto 0 auto; /* Üstten 30px boşluk */
+  margin: 30px auto 0 auto; 
   overflow: hidden;
 }
-
 .slider {
   position: relative;
   width: 100%;
 }
-
 .slides {
   display: flex;
   transition: transform 0.5s ease;
 }
-
 .slide {
   min-width: 100%;
-  height: 700px; /* Slider yüksekliği */
-  background-size: 100% 100%; /* Tam oturması için */
+  height: 700px; 
+  background-size: 100% 100%; 
   background-position: center;
   background-repeat: no-repeat;
 }
-
 .slide img {
   height: 100%;
   width: auto;
 }
-
-
-
-
-/* Navigation buttons */
 .prev, .next {
   position: absolute;
   top: 50%;
@@ -152,7 +143,6 @@ nav a:hover {
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
     .section h2 {
       text-align: left;
     }
@@ -164,7 +154,6 @@ nav a:hover {
   align-items: flex-start;
   padding: 20px;
 }
-
 .product {
   background: linear-gradient(135deg, #2992ed, #ffffff); /* koyu lacivertten maviye */
   border-radius: 12px;
@@ -175,7 +164,6 @@ nav a:hover {
   text-align: center;
   padding-bottom: 10px;
 }
-
 .product:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
@@ -247,8 +235,6 @@ nav a:hover {
   width: 240px;
   margin-top: 80px;
 }
-
-
 .section h2 {
   font-size: 24px;
   font-weight: bold;
@@ -275,7 +261,6 @@ nav a:hover {
   margin-top: 15px;
   margin-bottom: 10px;
 }
-
 .contact-button {
   display: inline-flex;
   align-items: center;
@@ -289,20 +274,16 @@ nav a:hover {
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
-
 .contact-button img {
   width: 22px;
   height: 22px;
 }
-
 .contact-button.phone {
   background-color: #e63946;
 }
-
 .contact-button:hover {
   filter: brightness(1.1);
 }
-
     }
     footer {
       background-color: #0a2f4f;
@@ -320,7 +301,7 @@ nav a:hover {
 #aboutModal {
   display: none;
   position: fixed;
-  z-index: 3000; /* hamburger'den yüksek */
+  z-index: 3000; 
   top: 0;
   left: 0;
   width: 100%;
@@ -330,7 +311,6 @@ nav a:hover {
   align-items: center;
   overflow-y: auto;
 }
-
 #aboutModal .modal-content {
   background-color: white;
   padding: 25px 20px;
@@ -341,7 +321,6 @@ nav a:hover {
   position: relative;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-
 #aboutModal .close {
   position: absolute;
   top: 10px;
@@ -352,14 +331,13 @@ nav a:hover {
   cursor: pointer;
   z-index: 3100;
 }
-
 #aboutModal .close:hover {
   color: #d10000;
 }
     .brand-logos-mobile {
   display: none;
 }
-    @media (max-width: 768px) {  /*Mobil versiyon ayarları*/
+    @media (max-width: 768px) {  
       .desktop-logo {
     display: none !important;
   }
@@ -367,23 +345,20 @@ nav a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: stretch; /* Ürünlerin aynı yükseklikte olmasını sağlar */
-    gap: 20px; /* Ürünler arasındaki boşluk */
+    align-items: stretch; 
+    gap: 20px; 
   }
-
   .products.custom-layout .product {
-    flex: 1 1 100%; /* Ürünler tam genişlikte görünür */
-    max-width: 100%; /* Maksimum genişlik */
-    margin: 0 auto; /* Ortalanır */
-    box-sizing: border-box; /* Kenar boşluklarını hesaba kat */
+    flex: 1 1 100%;
+    max-width: 100%; 
+    margin: 0 auto;
+    box-sizing: border-box; 
   }
-
   .products.custom-layout .product img {
     width: 100%;
     height: auto;
     object-fit: cover;
   }
-
   .products.custom-layout .product h3 {
     margin: 10px 0;
     font-size: 16px;
@@ -395,8 +370,8 @@ nav a:hover {
   }
       .brand-logos-mobile {
     display: flex;
-    flex-wrap: nowrap;         /* Tek satır */
-    overflow-x: auto;          /* Taşarsa scroll */
+    flex-wrap: nowrap;        
+    overflow-x: auto;         
     justify-content: flex-start;
     gap:13px;
     padding: 10px 12px;
@@ -404,7 +379,7 @@ nav a:hover {
     scroll-snap-type: x mandatory;
   }
   .brand-logos-mobile img {
-    height: 30px;              /* Küçültüldü */
+    height: 30px;              
     max-width: 80px;
     min-width: 60px;
     flex-shrink: 0;
@@ -430,7 +405,7 @@ nav a:hover {
     display: block !important;
     position: absolute;
     top: 10px;
-    right: 40px; /* en sağda */
+    right: 40px; 
     z-index: 1002;
     background: none;
     border: none;
@@ -442,7 +417,7 @@ nav a:hover {
     display: flex !important;
     position: absolute;
     top: 10px;
-    right: 10px; /* hemen solunda */
+    right: 10px; 
     z-index: 1002;
     flex-direction: column;
     justify-content: center;
@@ -496,26 +471,23 @@ nav a:hover {
   .product {
     width: 90%;
   }
-
 }
 .brand-logos {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px; /* Logolar arası boşluk */
+  gap: 20px; 
   padding: 20px 0;
 }
-
 .brand-logos img {
-  height: 45px; /* Logoların yüksekliği */
-  width: auto; /* Genişlik otomatik ayarlanır */
-  object-fit: contain; /* Görsellerin düzgün oturması */
+  height: 45px; 
+  width: auto;
+  object-fit: contain; 
   transition: transform 0.3s ease;
 }
-
 .brand-logos img:hover {
-  transform: scale(1.1); /* Hover efekti */
+  transform: scale(1.1); 
 }
 .floating-icons {
   position: fixed;
@@ -526,7 +498,6 @@ nav a:hover {
   flex-direction: column;
   gap: 12px;
 }
-
 .icon-button {
   width: 50px;
   height: 50px;
@@ -539,21 +510,16 @@ nav a:hover {
   transition: all 0.3s ease;
   animation: pulse 2.5s infinite;
 }
-
 .icon-button img {
   width: 40px;
   height: 40px;
   transition: transform 0.3s ease;
 }
-
-/* Hover efekti */
 .icon-button:hover {
   transform: scale(1.2);
   background-color: #f0f8ff;
   box-shadow: 0 0 12px rgba(0, 153, 255, 0.6);
 }
-
-/* Canlılık için pulse animasyonu */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -607,60 +573,50 @@ nav a:hover {
   display: none;
   z-index: 1001;
 }
-/* Header Tasarımı */
 .custom-header {
-  background-color: #0a2f4f; /* Arka plan rengi */
-  color: white; /* Yazı rengi */
+  background-color: #0a2f4f;
+  color: white; 
   padding: 20px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px solid #1e5a8c; /* Alt çizgi */
+  border-bottom: 3px solid #1e5a8c;
 }
-
 .header-container {
   display: flex;
   align-items: center;
-  gap: 20px; /* Logo ve yazı arasındaki boşluk */
+  gap: 20px; 
   max-width: 1200px;
   width: 100%;
 }
-
 .logo-container {
   display: flex;
   align-items: center;
 }
-
 .logo {
   width: 80px;
   height: auto;
   object-fit: contain;
 }
-
 .header-text {
   text-align: left;
 }
-
 .header-text h1 {
   font-size: 24px;
   margin: 0;
   font-weight: bold;
 }
-
 .header-text p {
   font-size: 14px;
   margin: 5px 0 0 0;
-  color: #d1e7ff; /* Daha açık bir ton */
+  color: #d1e7ff; 
 }
-
-/* Mobil Uyum */
 @media (max-width: 768px) {
   .custom-header {
     flex-direction: column;
     text-align: center;
     padding: 15px;
   }
-
   .header-container {
     flex-direction: column;
     gap: 10px;
@@ -692,10 +648,10 @@ nav a:hover {
         </div>
       </a>
       <div class="brand-logos">
-        <img src="demirdöküm.png" alt="Demirdöküm">
-        <img src="DAIKIN_logo.svg.png" alt="Daikin">
-        <img src="bosch.png" alt="Bosch">
-        <img src="vailant.jpg" alt="Vaillant">
+        <img src="demirdöküm.webp" alt="Demirdöküm">
+        <img src="daikin.webp" alt="Daikin">
+        <img src="bosch.webp" alt="Bosch">
+        <img src="vailant.webp" alt="Vaillant">
       </div>      
       <div class="hamburger" onclick="toggleMenu()">
         <span></span>
@@ -705,10 +661,10 @@ nav a:hover {
     </div>
   </header>
   <div class="brand-logos-mobile">
-    <img src="demirdöküm.png" alt="Demirdöküm">
-    <img src="DAIKIN_logo.svg.png" alt="Daikin">
-    <img src="bosch.png" alt="Bosch">
-    <img src="vailant.jpg" alt="Vaillant">
+    <img src="demirdöküm.webp" alt="Demirdöküm">
+    <img src="daikin.webp" alt="Daikin">
+    <img src="bosch.webp" alt="Bosch">
+    <img src="vailant.webp" alt="Vaillant">
   </div>
   <nav id="mainNav">
     <a href="index.html">Anasayfa</a>
@@ -732,24 +688,24 @@ nav a:hover {
     <a href="tel:05514424188">📞 Ücretsiz Keşif İçin Hemen Ara!</a>
   </div>  
  <div class="section" id="products">
-<img src="demirdöküm.png" alt="Demirdöküm Kampanya Başlık" style="width: 100%; max-width: 700px; display: block; margin: 0 auto 30px auto;">
+<img src="demirdöküm.webp" alt="Demirdöküm Kampanya Başlık" style="width: 100%; max-width: 700px; display: block; margin: 0 auto 30px auto;">
   <div class="products custom-layout">
     <div class="product top-left">
-      <img src="Ademix.png" alt="Ademix Serisi">
+      <img src="Ademix.webp" alt="Ademix Serisi">
       <h3>ADEMİX SERİSİ</h3>
     </div>
     <div class="product bottom-center">
-      <img src="Nitromix.png" alt="Pure ve Pro Serisi">
+      <img src="Nitromix.webp" alt="Pure ve Pro Serisi">
       <h3>NİTROMİX SERİSİ</h3>
     </div>
     <div class="product top-right">
-      <img src="Vintomix.png" alt="Plus Serisi">
+      <img src="Vintomix.webp" alt="Plus Serisi">
       <h3>VİNTOMİX SERİSİ</h3>
     </div>
   </div>
 </div>
 <div class="section" id="products-daikin">
-  <img src="DAIKIN_logo.svg.png" alt="Daikin Kampanya Başlık" style="width: 100%; max-width: 800px; display: block; margin: 0 auto 30px auto;">
+  <img src="daikin.webp" alt="Daikin Kampanya Başlık" style="width: 100%; max-width: 800px; display: block; margin: 0 auto 30px auto;">
 
   <div class="products custom-layout">
     <div class="product top-left">
@@ -768,19 +724,18 @@ nav a:hover {
     </div>
   </div>
 </div>
-
   <div class="section contact" id="contact">
     <h2 style="margin-left: 15px;">İletişim</h2>
     <div class="contact-links">
       <a href="tel:05514424188" class="contact-button phone">
-        <img src="telefon.png" alt="Telefon"> 0 (551) 442 41 88
+        <img src="telefon.webp" alt="Telefon"> 0 (551) 442 41 88
       </a>
       <a href="https://wa.me/905514424188" class="contact-button" target="_blank">
-        <img src="WhatsApp.svg.webp" alt="WhatsApp"> WhatsApp ile İletişime Geç
+        <img src="WhatsApp.webp" alt="WhatsApp"> WhatsApp ile İletişime Geç
       </a>
     
       <a href="https://www.instagram.com/kuzey_dogalgaz" class="contact-button" style="background-color:#E1306C;" target="_blank">
-        <img src="Instagram logo.jpg" alt="Instagram"> Instagram
+        <img src="Instagram logo.webp" alt="Instagram"> Instagram
       </a>
     </div>    
     <p>
@@ -899,28 +854,28 @@ function closeModal() {
 window.addEventListener("load", function () {
   setTimeout(() => {
 const badge = document.getElementById("whatsappBadge");
-const sound = document.getElementById("wpSound"); // BU ŞEKİLDE OLMALI!
+const sound = document.getElementById("wpSound"); 
 
 badge.style.display = "inline";
-sound.volume = 0.5; // sesi biraz daha kısalım
+sound.volume = 0.5; 
 sound.play().catch(e => console.log("Ses engellendi: Kullanıcı etkileşimi yok."));
-  }, 4000); // 4 saniye sonra çalışır
+  }, 4000); 
 });
   const wpSound = document.getElementById('wpSound');
   if (wpSound) {
-    wpSound.volume = 0.5; // 0 ile 1 arasında bir değer (0.0 = sessiz, 1.0 = tam ses)
+    wpSound.volume = 0.5;
   }
 </script>
   <div class="floating-icons">
     <a href="tel:905514424188" class="icon-button phone" title="Ara">
-      <img src="telefon.png" alt="Telefon">
+      <img src="telefon.webp" alt="Telefon">
     </a>
 <a href="https://wa.me/905514424188" target="_blank" class="icon-button whatsapp" title="WhatsApp" id="whatsappIcon">
-  <img src="WhatsApp.svg.webp" alt="WhatsApp">
+  <img src="WhatsApp.webp" alt="WhatsApp">
   <span class="notification-badge" id="whatsappBadge">1</span>
 </a>
     <a href="https://maps.app.goo.gl/fFCMVRGMjXDCPKcq5" target="_blank" class="icon-button location" title="Konum">
-      <img src="konum.png" alt="Konum">
+      <img src="konum.webp" alt="Konum">
     </a>
   </div>
 </body>
