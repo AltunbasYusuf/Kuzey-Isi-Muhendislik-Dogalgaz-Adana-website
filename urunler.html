@@ -41,7 +41,6 @@ nav a:hover {
   background-color: #1e5a8c;
   transform: translateY(-2px);
 }
-
     .container {
       max-width: 1000px;
       margin: auto;
@@ -51,7 +50,6 @@ nav a:hover {
       color: #0a2f4f;
       margin-bottom: 10px;
     }
-
 .full-product-block {
   display: flex;
   align-items: center;
@@ -61,36 +59,28 @@ nav a:hover {
   max-width: 1200px;
   padding: 40px 20px;
 }
-
 .full-product-block.reverse {
   flex-direction: row-reverse;
 }
-
 .full-product-block img {
   width: 400px;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
-
 .full-product-block .features {
   font-size: 20px;
   line-height: 1.8;
 }
-
 .full-product-block h2 {
   font-size: 28px;
   margin-bottom: 15px;
   color: #0a2f4f;
 }
-
 .product-features li {
   font-size: 18px;
   line-height: 1.6;
 }
-
-
-
     footer {
       text-align: center;
       padding: 15px;
@@ -124,7 +114,6 @@ nav a:hover {
   flex-direction: column;
   gap: 12px;
 }
-
 .icon-button {
   width: 50px;
   height: 50px;
@@ -137,21 +126,16 @@ nav a:hover {
   transition: all 0.3s ease;
   animation: pulse 2.5s infinite;
 }
-
 .icon-button img {
   width: 40px;
   height: 40px;
   transition: transform 0.3s ease;
 }
-
-/* Hover efekti */
 .icon-button:hover {
   transform: scale(1.2);
   background-color: #f0f8ff;
   box-shadow: 0 0 12px rgba(0, 153, 255, 0.6);
 }
-
-/* Canlılık için pulse animasyonu */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -166,7 +150,7 @@ nav a:hover {
     box-shadow: 0 0 0 rgba(0, 153, 255, 0.4);
   }
 }
-    @media (max-width: 768px) {  /*Mobil versiyon ayarları*/
+    @media (max-width: 768px) {  
       .desktop-logo {
     display: none !important;
   }
@@ -176,8 +160,8 @@ nav a:hover {
   }
       .brand-logos-mobile {
     display: flex;
-    flex-wrap: nowrap;         /* Tek satır */
-    overflow-x: auto;          /* Taşarsa scroll */
+    flex-wrap: nowrap;         
+    overflow-x: auto;        
     justify-content: flex-start;
     gap:13px;
     padding: 10px 12px;
@@ -185,7 +169,7 @@ nav a:hover {
     scroll-snap-type: x mandatory;
   }
   .brand-logos-mobile img {
-    height: 30px;              /* Küçültüldü */
+    height: 30px;             
     max-width: 80px;
     min-width: 60px;
     flex-shrink: 0;
@@ -211,7 +195,7 @@ nav a:hover {
     display: block !important;
     position: absolute;
     top: 10px;
-    right: 40px; /* en sağda */
+    right: 40px;
     z-index: 1002;
     background: none;
     border: none;
@@ -223,7 +207,7 @@ nav a:hover {
     display: flex !important;
     position: absolute;
     top: 10px;
-    right: 10px; /* hemen solunda */
+    right: 10px; 
     z-index: 1002;
     flex-direction: column;
     justify-content: center;
@@ -282,35 +266,29 @@ nav a:hover {
   gap: 30px;
   text-align: center;
 }
-
 .full-product-block.reverse {
   flex-direction: column !important;
 }
-
 .full-product-block img {
   width: 80%;
   max-width: 350px;
 }
-
 .full-product-block .features,
 .full-product-block .product-info,
 .full-product-block .product-features {
   text-align: center;
 }
-
 .full-product-block h2 {
   font-size: 22px;
 }
-
 .product-features li {
   font-size: 16px;
 }
-
 }
 #aboutModal {
   display: none;
   position: fixed;
-  z-index: 3000; /* hamburger'den yüksek */
+  z-index: 3000; 
   top: 0;
   left: 0;
   width: 100%;
@@ -320,7 +298,6 @@ nav a:hover {
   align-items: center;
   overflow-y: auto;
 }
-
 #aboutModal .modal-content {
   background-color: white;
   padding: 25px 20px;
@@ -331,7 +308,6 @@ nav a:hover {
   position: relative;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-
 #aboutModal .close {
   position: absolute;
   top: 10px;
@@ -342,7 +318,6 @@ nav a:hover {
   cursor: pointer;
   z-index: 3100;
 }
-
 #aboutModal .close:hover {
   color: #d10000;
 }
@@ -361,10 +336,10 @@ nav a:hover {
       </div>
     </a>
     <div class="brand-logos">
-      <img src="demirdöküm.png" alt="Demirdöküm">
-      <img src="DAIKIN_logo.svg.png" alt="Daikin">
-      <img src="bosch.png" alt="Bosch">
-      <img src="vailant.jpg" alt="Vaillant">
+      <img src="demirdöküm.webp" alt="Demirdöküm">
+      <img src="daikin.webp" alt="Daikin">
+      <img src="bosch.webp" alt="Bosch">
+      <img src="vailant.webp" alt="Vaillant">
     </div>  
         <div class="hamburger" onclick="toggleMenu()">
         <span></span>
@@ -379,13 +354,11 @@ nav a:hover {
   <a href="#" onclick="openModal(); return false;">Hakkımızda</a>
   <a href="index.html#contact">İletişim</a>
 </nav>
-
   <div class="container">
     <h2>Kombiler</h2>
     <div class="products">
-<!-- Yeni Ürün Bloğu Yapısı -->
 <div class="full-product-block">
-  <img src="Ademix.png" alt="Ademix Kombi">
+  <img src="Ademix.webp" alt="Ademix Kombi">
   <div class="features">
     <h2>Ademix Serisi</h2>
     <ul>
@@ -396,10 +369,9 @@ nav a:hover {
     </ul>
   </div>
 </div>
-
 <div class="full-product-block reverse">
   <div class="product-info">
-    <img src="Nitromix.png" alt="Nitromix Kombi" class="product-image">
+    <img src="Nitromix.webp" alt="Nitromix Kombi" class="product-image">
   </div>
   <ul class="product-features">
      <h2>Nitromix Serisi</h2>
@@ -409,10 +381,9 @@ nav a:hover {
     <li>Enerji tasarruf modu</li>
   </ul>
 </div>
-
 <div class="full-product-block">
   <div class="product-info">
-    <img src="Vintomix.png" alt="Vintomix Kombi" class="product-image">
+    <img src="Vintomix.webp" alt="Vintomix Kombi" class="product-image">
   </div>
   <ul class="product-features">
     <h2>Vintomix Serisi</h2>
@@ -422,7 +393,6 @@ nav a:hover {
     <li>Enerji tasarruf modu</li>
   </ul>
 </div>
-
 <div class="full-product-block reverse">
   <div class="product-info">
     <img src="icon.webp" alt="Icon Kombi" class="product-image">
@@ -435,7 +405,6 @@ nav a:hover {
     <li>A++ sınıfı</li>
   </ul>
 </div>
-
 <div class="full-product-block">
   <div class="product-info">
     <img src="ndj2.webp" alt="NDJ Kombi" class="product-image">
@@ -448,7 +417,6 @@ nav a:hover {
     <li>Enerji tasarruf modu</li>
   </ul>
 </div>
-
 <div class="full-product-block reverse">
   <div class="product-info">
     <img src="csu.webp" alt="CSU Kombi" class="product-image">
@@ -461,7 +429,6 @@ nav a:hover {
     <li>A++ sınıfı</li>
   </ul>
 </div>
-
     </div>
   </div>
   <footer>
@@ -504,13 +471,13 @@ function closeModal() {
   </script>
     <div class="floating-icons">
     <a href="tel:905514424188" class="icon-button phone" title="Ara">
-      <img src="telefon.png" alt="Telefon">
+      <img src="telefon.webp" alt="Telefon">
     </a>
     <a href="https://wa.me/905514424188" target="_blank" class="icon-button whatsapp" title="WhatsApp">
-      <img src="WhatsApp.svg.webp" alt="WhatsApp">
+      <img src="WhatsApp.webp" alt="WhatsApp">
     </a>
     <a href="https://maps.app.goo.gl/fFCMVRGMjXDCPKcq5" target="_blank" class="icon-button location" title="Konum">
-      <img src="konum.png" alt="Konum">
+      <img src="konum.webp" alt="Konum">
     </a>
   </div>
 </body>
