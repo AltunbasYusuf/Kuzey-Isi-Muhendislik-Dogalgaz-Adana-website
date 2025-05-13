@@ -496,11 +496,15 @@ function closeModal() {
       <img src="konum.webp" alt="Konum">
     </a>
   </div>
-  <div id="cookie-consent-banner" style="display:none; position:fixed; bottom:0; width:100%; background:#0a2f4f; color:#fff; padding:15px; text-align:center; z-index:9999; font-size:14px;">
-  Bu site, deneyiminizi geliştirmek için çerezler kullanır.
-  <a href="#" onclick="showCookieDetails(); return false;" style="color:#ffd700; text-decoration:underline;">Detaylı bilgi</a>
-  <button onclick="acceptCookies()" style="margin-left:15px; padding:6px 14px; background:#ffd700; color:#0a2f4f; border:none; border-radius:4px; cursor:pointer;">Kabul Et</button>
-  <button onclick="rejectCookies()" style="margin-left:10px; padding:6px 14px; background:#888; color:white; border:none; border-radius:4px; cursor:pointer;">Reddet</button>
+<div id="cookie-consent-banner" style="display:none; position:fixed; bottom:0; width:100%; background:#0a2f4f; color:#fff; padding:15px; text-align:center; z-index:9999; font-size:14px;">
+  <div style="margin-bottom:8px;">
+    Bu site, deneyiminizi geliştirmek için çerezler kullanır.
+  </div>
+  <div>
+    <a href="#" onclick="showCookieDetails(); return false;" style="color:#ffd700; text-decoration:underline;">Detaylı bilgi</a>
+    <button onclick="acceptCookies()" style="margin-left:15px; padding:6px 14px; background:#ffd700; color:#0a2f4f; border:none; border-radius:4px; cursor:pointer;">Kabul Et</button>
+    <button onclick="rejectCookies()" style="margin-left:10px; padding:6px 14px; background:#888; color:white; border:none; border-radius:4px; cursor:pointer;">Reddet</button>
+  </div>
 </div>
 <script>
   function acceptCookies() {
