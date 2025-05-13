@@ -4,13 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ürünlerimiz | Kuzey Isı Mühendislik</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-06RZT7RKXT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-06RZT7RKXT');
-  </script>
+   <script>
+  function enableAnalytics() {
+    var gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-06RZT7RKXT";
+    document.head.appendChild(gtagScript);
+    gtagScript.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-06RZT7RKXT');
+    };
+  }
+</script>
  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     body {
@@ -358,6 +366,7 @@ nav a:hover {
 <nav id="mainNav">
   <a href="index.html">Anasayfa</a>
   <a href="urunler.html">Ürünlerimiz</a>
+  <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
   <a href="#" onclick="openModal(); return false;">Hakkımızda</a>
   <a href="index.html#contact">İletişim</a>
 </nav>
@@ -487,5 +496,32 @@ function closeModal() {
       <img src="konum.webp" alt="Konum">
     </a>
   </div>
+  <div id="cookie-consent-banner" style="display:none; position:fixed; bottom:0; width:100%; background:#0a2f4f; color:#fff; padding:15px; text-align:center; z-index:9999; font-size:14px;">
+  Bu site, deneyiminizi geliştirmek için çerezler kullanır.
+  <a href="#" style="color:#ffd700; text-decoration:underline;">Detaylı bilgi</a>
+  <button onclick="acceptCookies()" style="margin-left:15px; padding:6px 14px; background:#ffd700; color:#0a2f4f; border:none; border-radius:4px; cursor:pointer;">Kabul Et</button>
+  <button onclick="rejectCookies()" style="margin-left:10px; padding:6px 14px; background:#888; color:white; border:none; border-radius:4px; cursor:pointer;">Reddet</button>
+</div>
+<script>
+  function acceptCookies() {
+    localStorage.setItem("cookiesAccepted", "true");
+    enableAnalytics();
+    document.getElementById("cookie-consent-banner").style.display = "none";
+  }
+
+  function rejectCookies() {
+    localStorage.setItem("cookiesAccepted", "false");
+    document.getElementById("cookie-consent-banner").style.display = "none";
+  }
+
+  window.addEventListener("load", function () {
+    const consent = localStorage.getItem("cookiesAccepted");
+    if (consent === null) {
+      document.getElementById("cookie-consent-banner").style.display = "block";
+    } else if (consent === "true") {
+      enableAnalytics();
+    }
+  });
+</script>
 </body>
 </html>
