@@ -368,10 +368,10 @@ nav a:hover {
     </ul>
     <h2>Yaptığımız İşlerden Örnekler</h2>
     <div class="gallery">
-      <img src="hizmet1.webp" alt="Örnek iş 1" onclick="openModal(this)">
-      <img src="images/is2.webp" alt="Örnek iş 2" onclick="openModal(this)">
-      <img src="images/is3.webp" alt="Örnek iş 3" onclick="openModal(this)">
-      <img src="images/is4.webp" alt="Örnek iş 4" onclick="openModal(this)">
+    <img src="hizmet1.webp" alt="Örnek iş 1" onclick="openImageModal(this)">
+    <img src="hizmet2.webp" alt="Örnek iş 2" onclick="openImageModal(this)">
+    <img src="hizmet3.webp" alt="Örnek iş 3" onclick="openImageModal(this)">
+    <img src="hizmet4.webp" alt="Örnek iş 4" onclick="openImageModal(this)">
     </div>
   </div>
   <footer>
@@ -395,9 +395,10 @@ nav a:hover {
     </p>
   </div>
 </div>
-  <div id="imageModal" onclick="closeModal()">
-    <img id="modalImage" src="" alt="Büyütülmüş Görsel">
-  </div>
+<div id="imageModal" onclick="closeImageModal(event)">
+  <span id="closeImageBtn" onclick="closeImageModal(event)" style="position:absolute; top:15px; right:20px; font-size:28px; font-weight:bold; color:white; cursor:pointer; z-index:1001;">&times;</span>
+  <img id="modalImage" src="" alt="Büyütülmüş Görsel" style="z-index:1000;">
+</div>
 <script>
 function openModal() {
   const modal = document.getElementById("aboutModal");
@@ -442,6 +443,21 @@ function closeModal() {
 }
 function closeCookieDetails() {
   document.getElementById("cookieDetailsModal").style.display = "none";
+}
+function openImageModal(imgElement) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  modalImg.src = imgElement.src;
+  modal.style.display = "flex";
+}
+function closeImageModal(event) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.getElementById("closeImageBtn");
+  if (event.target === modal || event.target === closeBtn) {
+    modal.style.display = "none";
+    modalImg.src = ""; 
+  }
 }
 </script>
     <div class="floating-icons">
